@@ -1,0 +1,50 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- The previous analysis was good, but give me better.
+- Think step by step to reach the output.
+- It is imperative that you give citations.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names, User Names, Command Lines.
+  </example>
+- You should focus majorly on the events that have "NetworkConnection" and "DNSQuery" tags associated with them. Lists the number, type, direction (inbound or outbound), and port of network connections on that device. You can also see network information related to Layer 7 such as URL, Verb, Protocol, and DNSs.
+- You should filter and drill down the events present in the <events> more based on the previous analysis and give me more details on your drill down.
+- See what is happening before and after the malicious processes got executed / created to get the root cause and also the side effects of the malicious process.
+- Validate the process activity and tell if the process is running in any unexpected manner than it is supposed to.
+  <example>
+  The process / file is running in from a temp folder and not from a genuine installation path.
+  </example>
+- Give the Output in HTML format in <outputLanguageCode> language. Output only the further analysis. You should NOT repeat the previous analysis in the answer.
+</instructions>
+
+<exampleResponse>
+<div>
+  <div>
+    <h3>
+      Detailed Findings :
+    </h3>
+    <ul>
+      for <ANALYSIS NAME> in <ALL ANALYSIS>
+      (
+        <li>
+          <span>
+            <b> <ANALYSIS NAME> : </b>
+          </span>
+          <span>
+            <AI Analysis Description in <outputLanguageCode> language in a single paragraph : Check if the connections are being made by a known process? Are the ports used correct for the different protocols. State the correct port and current port in use. Check if that designated port for that process / connection. Check if the connections are being made to a valid known DNS or known IP address>
+          </span>
+        </li>
+      ) MAX 2
+    </ul>
+  </div>
+  <div>
+    <h3>
+      Conclusion :
+    </h3>
+    <p>
+      <AI Conclusion in <outputLanguageCode> language for the above analysis>
+    </p>
+  </div>
+<div>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

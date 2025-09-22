@@ -1,0 +1,58 @@
+<instructions>
+- You will be given a knowledge graph for mermaid in graph TD in ENG as input.
+- Your task is to translate the words enclosed within pipes (|) to the language mentioned in <outputLanguageCode>.
+  <example>
+    If the <outputLanguageCode> mentioned is FRA, the translation will be as follows
+    Before: A("javaw.exe (PID:29124)") --->|executes| B("java.exe (PID:28960)")
+    After: A("javaw.exe (PID:29124)") --->|exécute| B("java.exe (PID:28960)")
+  </example>
+  <example>
+    If the <outputLanguageCode> mentioned is HIN, the translation will be as follows
+    Before: B("DCDSetup1.4.3.131.exe (PID:3588)") --->|creates and deletes| E("Temporary files")
+    After: B("DCDSetup1.4.3.131.exe (PID:3588)") --->|बनाता और हटाता है| E("Temporary files")
+  </example>
+- Only translate the text enclosed within pipes and NOTHING ELSE.
+- DO NOT translate text enclosed within double quotes and parentheses. Refer to the example given below:
+  <example>
+  To be translated to FRA: B --->|creates and deletes| E("Temporary files")
+  - In this context, DO NOT translate text present inside E(""). Leave it as it is.
+    Incorrect: B --->|crée et supprime| E("Fichiers temporaires")
+    Correct: B --->|crée et supprime| E("Temporary files")
+  </example>
+- Output the translated knowledge graph in graph TD. Refer to the examples given below:
+  <example type="incorrect">
+    graphique TD
+     A("800IS1030 (Windows 10)") --->|hôtes| B("svchost.exe (1040)")
+     B --->|apparaît| C("powershell.exe (2368)")
+     C --->|exécute| D("Script caché pour charger l'assembly .NET")
+      
+      style A remplir: #52C2FF
+      style A couleur: noir
+      style B remplir: #FA9600
+      style B couleur: noir
+      style C remplir: #52C2FF
+      style C couleur: noir
+      style D remplir: #52C2FF
+      style D couleur: noir
+  </example>
+  <example type="correct">
+    graph TD
+      A("800IS1030 (Windows 10)") --->|hôtes| B("svchost.exe (1040)")
+      B --->|apparaît| C("powershell.exe (2368)")
+      C --->|exécute| D("Hidden script to load .NET assembly")
+        
+      style A fill: #52C2FF
+      style A color: black
+      style B fill: #FA9600
+      style B color: black
+      style C fill: #52C2FF
+      style C color: black
+      style D fill: #52C2FF
+      style D color: black
+  </example>
+- Write your answer in an <answer> section.
+</instructions>
+
+<outputLanguageCode>
+{language_iso_code}
+</outputLanguageCode>

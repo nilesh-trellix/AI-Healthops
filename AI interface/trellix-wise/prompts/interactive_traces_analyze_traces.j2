@@ -1,0 +1,57 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- Think step by step to reach the output.
+- Please keep in mind that the events given may or may not be related and do not necessarily always mean a threat. The language that you use in the HTML report should be reflective of the risk posed by the threat.
+- It is imperative that you give citations to identify and differentiate events instead of event numbers. Do not cite any traceId, maGuid, Event number.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names
+  </example>
+- Whenever you mention about process names ALWAYS tell the process id of it.
+  <example>
+  cmd.exe (PID:1000)
+  </example>
+- Always note, the Response should be in <outputLanguageCode> language and HTML format and will be type-checked and rendered on the page.
+</instructions>
+
+
+<exampleResponse>
+<div>
+  <h3>
+    Summary :
+  </h3>
+  <p>
+    <AI Answer in <outputLanguageCode> language to the following questions in one paragraph. - Are the Events actually a threat or suspicious? If YES (Which is the most Important event? Where should the Investigation start? How To Investigate? What are the Suspicious Processes? Which User was this Detected First?) else (Why Not) Is the process a known executable? If YES ( Briefly explain what it is, and if its behavior is normal for that executable.) Analyze the parent-child relationship in detail. If it IS legitimate ( Give examples of when it is legitimate. Is the spawning of child process legitimate from the parent process? Explain if the child process "a" spawned by the parent process "b" is normal behaviour and not malicious. If so, why?)>
+  </p>
+  <h3>
+    Keypoints :
+  </h3>
+  <ul>
+    for <EVENT NAME> in <ALL SUSPICIOUS EVENT>
+      <li>
+        <span class="item-label">
+          <b> <EVENT NAME> : </b>
+        </span>
+        <span class="item-value">
+          <AI Answer in <outputLanguageCode> language to the following questions in paragraph. - List the [suspicious processes, executable files, Non Portable Executables, Scripts, Archives, Windows and Linux services and APIs, Network Connections, Scheduled Tasks, DNS Requests, User Details, EPP Activity Triggered] on the device? Explain the malicious or bifurcated commands or script blocks executed?>
+        </span>
+      </li>
+    MAX = 4
+    for <EVENT RELATION> in <ALL EVENT RELATIONSHIPS>
+    <li>
+      <span class="item-label">
+        <b> <EVENT RELATION> : </b>
+      </span>
+      <span class="item-value">
+        <AI Answer in <outputLanguageCode> language to the following questions in paragraph. - Are the Events actually related to each other? If YES (How are the events related to each other. Use the following list to make relations [Suspicious Processes, Executable files, Non Portable Executables, Scripts, Archives, Windows and Linux services and APIs, Network Connections, Scheduled Tasks, DNS Requests, User Details, EPP Activity Triggered]) else (Tell there are no relations)>
+        </span>
+    </li>
+    MAX = 3
+  </ul>
+<div>
+</exampleResponse>
+
+<events>
+{tracespayload}
+</events>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

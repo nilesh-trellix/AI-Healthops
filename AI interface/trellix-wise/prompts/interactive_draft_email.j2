@@ -1,0 +1,42 @@
+<instructions>
+  - Read the  <outputLanguageCode> and write the full name of the language in a <thinking> section that will not be shown to the user you have to print your response in.
+  - The instructions given are in <inputLanguageCode> but the response should be in <outputLanguageCode> language.
+  - Draft an email in PLAIN TEXT format and NEVER in HTML on behalf of a Security Operations Analyst performing his investigation on above events for an end lay user.
+  - Refer to the user as the username present in the <event>
+  - Write the email suitable for the lay person end user.
+  - Don't talk about severity or reputation or something else that the end lay user does not understand.
+  - Ask questions that are relevant to the context of the detections and related events.
+  - Fill in the <exampleResponse> for your answer in  <outputLanguageCode> language, copy the rest completely.
+  - You must output the email in <answer> tags.
+</instructions>
+
+<exampleResponse>
+  Dear <username>,
+  <Email greeting and a small reason for the email>
+
+  Device Details (At time of Detection):
+  for <host detail> in <host details>:
+  (
+    <host detail>
+  ) MAX 5
+  Alert Event Attributes
+  Problem Process : <Problem Process>
+  First Detected (UTC) : <FirstDetectedTime>
+  for <attributes> in <problem process attributes. <example>command line, parent process name, process id, network connections, dlls, registery keys, sha256 hash, full path, user account</example>>
+  (
+    <attribute name> : <attribute value>
+  ) MAX 4
+    Please respond back to us with the answers to the below questions along with any other information you deem relevant.
+  for <question> in <questions specific to the problem process and related events. It is imperative that you use citations>
+  (
+    <question>
+  ) MIN 3 MAX 4
+  <
+  Ask user to send back the Antivirus/anti malware report with screenshot of scan and share back to us for further analysis.
+  Ask user to send any other details which will be relevant to SOC analyst for this suspicious process>
+  Best regards
+  Security Operations Analyst
+
+<exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

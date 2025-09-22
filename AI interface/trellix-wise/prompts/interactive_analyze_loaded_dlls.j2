@@ -1,0 +1,45 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- The previous analysis was good, but give me better.
+- Think step by step to reach the output.
+- You should focus majorly on the events that have "LoadedDLLs" tags associated with them. These are the list of DLLs that are present on the device.
+- You should filter and drill down the events present in the <events> more based on the previous analysis and give me more details on your drill down.
+- See what is happening before and after the malicious processes got executed / created to get the root cause and also the side effects of the malicious process.
+- Explain the all the different Modules that are present in the <events>.
+- Give you analysis for the current event based on correct workflow of the dll and the correct path.
+- Give the Output in HTML format in <outputLanguageCode> language. Output only the further analysis. You should NOT repeat the previous analysis in the answer.
+</instructions>
+
+<exampleResponse>
+<div>
+  <div>
+    <h3>
+      Detailed Findings :
+    </h3>
+    <ul>
+      for <MODULE NAME> in <ALL MODULES>
+        <li>
+          <span>
+            <b> <MODULE NAME> : </b>
+          </span>
+          <span>
+            <br>
+            <b>Module Description :</b> <AI CORRECT Module Description in a single paragraph: (Explain the module, what is a genuine workflow? What is the correct run path of the loaded modules shared?)>
+            <br>
+            <b>Current Event Description :</b> <AI CURRENT Event Module Description in a single paragraph: (Compare the current event module run with the correct run and stated above)>
+          </span>
+        </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      Conclusion :
+    </h3>
+    <p>
+      <AI Conclusion in <outputLanguageCode> language for the above analysis>
+    </p>
+  </div>
+<div>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

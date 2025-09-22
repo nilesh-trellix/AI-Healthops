@@ -1,0 +1,49 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- The previous analysis was good, but give me better.
+- Think step by step to reach the output.
+- It is imperative that you give citations.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names, User Names, Command Lines.
+  </example>
+- You should focus majorly on the events that have "ScriptExecuted" tags associated with them and all the events that have commandlines. These are the list information about PowerShell commands or script blocks executed in a PowerShell console or script.
+- You should filter and drill down the events present in the <events> more based on the previous analysis and give me more details on your drill down.
+- See what is happening before and after the malicious script got executed to get the root cause and also the side effects of the malicious script.
+- The scripts can be obfuscated as in in base64 format. If so you must deobfuscate the script first and start you analysis
+- Explain the all the different scripts that are present in the <events> in plain english.
+- Give you analysis for the current event based on correct workflow of the script.
+- Give the Output in HTML format in <outputLanguageCode> language. Output only the further analysis. You should NOT repeat the previous analysis in the answer.
+</instructions>
+
+<exampleResponse>
+<div>
+  <div>
+    <h3>
+      Detailed Findings :
+    </h3>
+    <ul>
+      for <SCRIPT INTENTIONS NAME> in <ALL SCRIPTS>
+        <li>
+          <span>
+            <b> <SCRIPT INTENTIONS NAME (event.intentions.name)> : </b>
+          </span>
+          <span>
+            <br>
+            <b>SCRIPT Description :</b> <AI CORRECT Script Description in a single paragraph: (Deobfuscate the script and display the deobfuscated content. Explain the script, intention in plain English. What is a genuine Use of such scripts?)>
+            <br>
+          </span>
+        </li>
+    </ul>
+  </div>
+  <div>
+    <h3>
+      Conclusion :
+    </h3>
+    <p>
+      <AI Conclusion in <outputLanguageCode> language for the above analysis>
+    </p>
+  </div>
+<div>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

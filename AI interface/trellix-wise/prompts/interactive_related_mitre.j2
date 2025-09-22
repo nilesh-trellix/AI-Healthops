@@ -1,0 +1,47 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- Think step by step to reach the answer.
+- The previous analysis was good, but give me better.
+- It is imperative that you give citations.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names, User Names, Command Lines.
+  </example>
+- Explain about mitre tactics, techniques and procedures (TTPs) relating to the above cybersecurity events and Analysis.
+- You should filter and drill down the events present in the <events> more based on the previous analysis and give me more details on your drill down.
+- Explain about different file MITRE Techniques present and tell what are they used for.
+
+IMPORTANT !! If you cannot confidently and accurately provide any of the above items, it is best to just omit the item. Accuracy is IMPORTANT here.
+
+Give the Output in HTML format in <outputLanguageCode> language. Output only the further analysis. You should NOT repeat the previous analysis in the answer.
+</instructions>
+
+<exampleResponse>
+<div>
+  <ol>
+    for <MITRE TACTIC> in <ALL MITRE TACTICS>
+    (
+    <li>
+      <h3 class="item-label">
+        <b> <MITRE ATT&CK® Technique ID>:</b> <MITRE ATT&CK® Technique NAME>
+      </h3>
+      <ul>
+        <li class="item-value">
+          <b>Description : </b><MITRE ATT&CK® TACTIC DESCRIPTION>
+        </li>
+        <li class="item-value">
+          <b>Adversary Insights : </b><MITRE ATT&CK® ADVERSARY INSIGHTS>
+        </li>
+        <li class="item-value">
+          <b>Observed Actions : </b><Unordered List of Actions Observed in the events for classifying with the stated MITRE tactic>
+        </li>
+        <li class="item-value">
+          <b>Related Tactics : </b><Unordered List of Related MITRE Tactics for the stated MITRE tactic>
+        </li>
+      </ul>
+    </li>
+    ) MIN 2 MAX 4
+  </ol>
+<div>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

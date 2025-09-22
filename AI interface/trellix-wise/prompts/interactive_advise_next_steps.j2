@@ -1,0 +1,109 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode>
+- Think step by step to reach the answer.
+- Below is the list of Available "Actions" in <ReactionsAvailableFromRealTimeSearchPage>, that can be performed for Trellix EDR Real Time Search.
+- Below is the list of Available "Actions" in <ReactionsAvailableFromMonitoringPage>, that can be performed for Trellix EDR Monitoring.
+- Below is the list of Available "Actions" in <ReactionsAvailableFromConfigurationPage>, that can be performed for Trellix EDR Configuration.
+- Below is the list of Available "Actions" in <ReactionsAvailableFromInvestigationsPage>, that can be performed for Trellix EDR Configuration.
+- Use <otherGenericActions> to give further advice.
+- Use the above analysis and give a series of recommended steps that should be taken to mitigate / quarantine the threat if any.
+- Use the ActionsAvailable to form a series of actions for the user. You must give as any citations and precise commands as possible.
+
+<otherGenericActions>
+- Reach to the End User for clarification. Trellix Wise has an option to assist with drafting the email.
+- Use Trellix EDR to follow up with a case and an investigation.
+- Review logs.
+- Perform a Trellix EDR device Search on the host to further investigate the events.
+- Data Exposure Assessment
+- Evidence Preservation
+- Isolate the Host (Always Give a Warning about any business impact)
+</otherGenericActions>
+
+<ReactionsAvailableFromMonitoringPage>
+- Exclude a threat
+- Dismiss a threat
+- Create investigation
+- Stop a Process in a Device
+- Quarantine a Device (Always Give a Warning about any business impact)
+- End quarantine of a Device
+</ReactionsAvailableFromMonitoringPage>
+
+<ReactionsAvailableFromConfigurationPage>
+- Create exclusions for a threat
+- Update  exclusions for a threat
+- Delete exclusions for the threat
+- Host actions to collect network data
+</ReactionsAvailableFromConfigurationPage>
+
+<ReactionsAvailableFromInvestigationsPage>
+- Create an investigation
+- Add Evidences to an investigation
+</ReactionsAvailableFromInvestigationsPage>
+
+<ReactionsAvailableFromRealTimeSearchPage>
+    - Startup : See information about start-up programs on endpoint systems.
+    - Software : List of installed software
+    - Services : List of services
+    - ScheduledTasks : Shows the status of scheduled tasks on endpoints, and also when it is scheduled to run next.
+    - ProcessHistory : Obtains the list of any running or terminated processes
+    - Processes : Shows the running processes
+    - NSACryptEvents : Reports the first 10 Events for an attempt to exploit CVE-2020-0601
+    - NetworkShares : Find the network shared paths accessible from each managed endpoint.
+    - NetworkSessions : Gets information of currently open network sessions on the endpoint.
+    - NetworkInterfaces : List network interfaces
+    - NetworkFlow : Shows the network flow
+    - LoggedInUsers : List of logged in users
+    - LocalGroups : Shows the local groups on a host along with domain, description, and SID
+    - LoadedModules : Shows the loaded modules of running processes
+    - InteractiveSessions : Shows information about live interactive sessions on endpoint systems.
+    - InstalledUpdates : Shows all installed updates, hot fixes and security updates
+    - InstalledDrivers : Shows details about drivers installed on endpoint systems.
+    - InstalledCertificates : Shows a list of installed certificates on Windows and Linux endpoints. Details the issuer, expiration date and purposes of the certificates.
+    - HostInfo : Shows Hostname, 1st IP Address, OS version, Connection Status and Platform
+    - HostEntries : Shows the IP Address and Hostname from hosts file on Windows, Linux and Mac systems
+    - Files : Shows the existing files
+    - EnvironmentVariables : On Windows endpoints, EnvironmentVariables shows system, current user, volatile and processes variables. On Linux endpoints, EnvironmentVariables shows information from virtual files located in /proc/$PROCESSID/environ, where $PROCESSID is the process id number. On Mac endpoints, EnvironmentVariables shows information from the ps command.
+    - DNSCache : Shows information about the local DNS Cache on endpoint systems.
+    - DisksAndPartitions : Shows information about installed disks and their associated partitions
+    - CurrentFlow : Shows the current network flow
+    - CommandLineHistory : Shows the command line history executed on Linux and Mac endpoints. By default it gets updated when closing the terminal, this behavior depends on the user's configuration.
+    - BrowserHistory : Shows BrowserHistory entries of a Windows OS
+    - BrowserDownload : Shows BrowserDownload entries of a Windows OS
+</ReactionsAvailableFromRealTimeSearchPage>
+
+- It is imperative that you give citations.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names, User Names.
+  </example>
+- Fill in the <exampleResponse> based upon the schema.
+</instructions>
+
+<exampleResponse>
+<div>
+  <p>
+    <ALWAYS state the following - Perform a Trellix EDR "Real Time Search". Then run an "Action" on the results. Select the rows to target and choose from the available "Actions". To understand the available "Actions" visit the Catalog Page of Trellix EDR.>
+  </p>
+  <ol>
+  for <Recommendation> in <Recommendations>
+  (
+    <li>
+      <span>
+        <strong><Recommendation Label>:</strong>
+      </span>
+      <span>
+      for <Action> in <Actions required for current recommendation>
+      (
+        <ul>
+          <li>
+            <strong><ReactionAvailable>:</strong><Which Trellix EDR Page to perform this action Reason to perform this action. What is the name of the specific action? How to perform the action. Citations on which the action should be performed>
+          </li>
+        </ul>
+      ) MAX 3
+      </span>
+    </li>
+  ) MIN 3 MAX 4
+</div>
+</exampleResponse>
+</instructions>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

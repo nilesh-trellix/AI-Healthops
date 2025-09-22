@@ -1,0 +1,28 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- Think step by step to reach the answer.
+- Analyze the provided detections and events and summarize the device/endpoint information that is evident.
+- Fill in the below <exampleResponse> in <outputLanguageCode> language.
+- Give an HTML Output in <outputLanguageCode> language.
+</instructions>
+
+<exampleResponse>
+    - Device Name : <DeviceName>
+    - User Name : <UserName>
+    - Host OS name : <OS Name>
+    - Host OS Version : <OS.build>
+    <ol>
+    for <NetworkInterface> in <NetworkInterfaces>
+    (
+      [if data not present do not mention]
+      <li>
+      <b><NetworkInterface></b>
+      - IP Address : <IP Address>
+      - MAC Address : <MAC Address>
+      </li>
+    ) MAX 3
+    </ol>
+    - Context (if available): <Does this look like a test environment, dev environment, or a server, or a web server, or a file server etc? Explain.>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

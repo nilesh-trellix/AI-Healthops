@@ -1,0 +1,78 @@
+<instructions>
+- Generate a knowledge graph for mermaid in TD graph for the above events in <outputLanguageCode> language.
+
+Create your answer using the <stepsToCreateGenogram> step by step.  Write your answer in a <answer> section. You must think step by step to reach the answer. Output your thinking in a separate <thinking> section that will not be shown to the user.
+
+<restrictions>
+IMPORTANT: Return the graph TD markdown in <outputLanguageCode> language.
+- An example follows between the <exampleResponse> tags. Generate the mermaid JS graph template in a format and naming style conventions exactly same to the <exampleResponse>.
+- Please use the arrow to mark to edges as shown "--->".
+- Strip node content of double quotes '"' always.
+- All the nodes to be enclosed in ".
+  <example>
+  D("CtxMtHost.exe"), A("/bin/bash")
+  </example>
+- Always mention correct Pid with the process based upon the data from <events>.
+- Always mention the network details present under <detections>.
+- Order the node and edge siblings by time field (from <events>)
+- DO NOT nest a node inside a node. Create the graph with simple, non-nested nodes. (E.g., the node should look like C("update.exe") and NOT LIKE C(D("update.exe")))
+- Never Mention the full file name in the nodes, always use the abbreviated file name.
+- Never mention any kind of hashes in the Knowledge Graph.
+</restrictions>
+
+<colorCoding>
+Based upon the severity we will color code ALL the nodes.
+- s0,s1 = #EBC80A
+- s2,s3 = #FA9600
+- s4,s5 = #FF4053
+- none or empty = #52C2FF
+
+Once done we need to add below for ALL the nodes as shown in example below in the end of the graph.
+  style A fill:#FF4053
+  style A color:black
+</colorCoding>
+
+
+<NodeGroups>
+- Host Details
+- Process (Do Not fetch the pids (process Id))
+- DLL
+- Registry Key
+- File
+- IP address (with associated ports if any)
+- User
+- Windows API
+- Services
+</NodeGroups>
+
+<stepsToCreateGenogram>
+1. Read complete previous HTML analysis and <events>.
+2. Extract all network details along with corresponding names present in <detections> and aggregate them.
+3. Extract all the entities from the above text response and <events> and group the entities according to <nodeGroups>.
+4. Analyze Command lines and only write a concise single line summary of them, DO NOT write the command line.
+5. Using Pid (processId), PPID(parent Process Id) from the <events> write down verb relationships between every entity in the above list.
+6. Find the severity to all the nodes listed in Step 5 using <events> and write them down, Color the nodes based upon the <colorCoding>.
+7. Use the summaries from step 3 in creating the genogram.
+8. Create Node Genogram while keeping <restrictions> in mind.
+<stepsToCreateGenogram>
+
+</instructions>
+
+<exampleResponse>
+RELATION must always be enclosed within | | and can contain only alpha-numeric characters in <outputLanguageCode> language.
+RELATEDEVENT must always be enclosed within "" and ().
+```mermaid
+graph TD
+  for RELATION in EVENTRELATIONS
+  (
+    A(MOST SUSPICIOUS EVENT) --->|RELATION| B(RELATEDEVENT)
+    B --->|RELATION| C(RELATEDEVENT)
+    C --->|RELATION| D(RELATEDEVENT)
+    D --->|RELATION| E(RELATEDEVENT)
+    E --->|RELATION| F(RELATEDEVENT)
+    F --->|RELATION| G(RELATEDEVENT)
+  )
+  style A fill:#FF4053
+  style A color:black
+```
+</exampleResponse>

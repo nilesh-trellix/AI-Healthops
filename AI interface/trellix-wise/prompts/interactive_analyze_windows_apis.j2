@@ -1,0 +1,51 @@
+<instructions>
+- The instructions given are in <inputLanguageCode> but the HTML response should be in <outputLanguageCode> language.
+- The previous analysis was good, but give me better.
+- Think step by step to reach the output.
+- It is imperative that you give citations.
+  <example>
+  reference Process Name, IPs, File Names, Registry Keys, Host Names, User Names, Command Lines.
+  </example>
+- You should focus majorly on the events that have "APICall" tags associated with them. These are the information about Windows APIs used by processes.
+- You should filter and drill down the events present in the <events> more based on the previous analysis and give me more details on your drill down.
+- See what is happening before and after the malicious processes got executed / created to get the root cause and also the side effects of the malicious process.
+- Explain the all the different Windows APIs that are present in the <events>.
+- Give you analysis for the current event based on what is the use of the windows APIs, its correct value.
+- Give the Output in HTML format in <outputLanguageCode> language. Output only the further analysis. You should NOT repeat the previous analysis in the answer.
+</instructions>
+
+<exampleResponse>
+<div>
+  <div>
+    <h3>
+      Detailed Findings :
+    </h3>
+    <ul>
+      for <CURRENT API> in <ALL WINDOWS API>
+      (
+        <li>
+          <span>
+            <b> <CURRENT API> : </b>
+          </span>
+          <span>
+            <br>
+            <b>API Description :</b> <AI CORRECT Windows API Description in a single paragraph: (Explain the windows API, what is a genuine arguments? What is the correct parent process of the API? What should be the API result and API data?)>
+            <br>
+            <b>Current Event Description :</b> <AI CURRENT Event Key Description in a single paragraph: (Compare the current event API call with the correct run and stated above)>
+          </span>
+        </li>
+      )
+    </ul>
+  </div>
+  <div>
+    <h3>
+      Conclusion :
+    </h3>
+    <p>
+      <AI Conclusion in <outputLanguageCode> language for the above analysis>
+    </p>
+  </div>
+<div>
+</exampleResponse>
+
+Give the HTML Summary answer in <outputLanguageCode> language.

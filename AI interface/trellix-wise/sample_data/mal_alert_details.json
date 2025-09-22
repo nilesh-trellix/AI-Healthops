@@ -1,0 +1,159 @@
+{
+  "alertData": {
+    "details": [],
+    "route": "/hx/api/v3/alerts/id/full_details",
+    "data": {
+      "_id": 2588,
+      "agent": {
+        "_id": "kQsNdq1ivmbeLHVouFADYw",
+        "url": "/hx/api/v3/hosts/kQsNdq1ivmbeLHVouFADYw",
+        "containment_state": "normal"
+      },
+      "appliance": {
+        "_id": "861C232F7FB9"
+      },
+      "multi_indicators": [],
+      "event_at": "2025-08-12T12:58:56.536Z",
+      "matched_at": "2025-08-12T12:58:56.536Z",
+      "reported_at": "2025-08-12T12:58:58.054Z",
+      "source": "MAL",
+      "subtype": "AV",
+      "matched_source_alerts": [],
+      "resolution": "QUARANTINED",
+      "is_false_positive": false,
+      "decorators": [],
+      "md5values": [
+        "c2c9c746a7e6c054a256f512f2f5ba07"
+      ],
+      "decorator_statuses": [],
+      "url": "/hx/api/v3/alerts/2588",
+      "condition": null,
+      "indicator": null,
+      "event_id": null,
+      "event_type": null,
+      "event_values": {
+        "system-data": {
+          "xmlns": "http://www.fireeye.com/antimalware-alert",
+          "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+          "xsi:schemaLocation": "http://www.fireeye.com/antimalware-alert AM-alert.xsd",
+          "alert-version": "3",
+          "correlation-id": "5e56b2e5-cdd7-4ded-8a38-c70e68f40c6d",
+          "timestamp": "2025-08-12T12:58:56.536Z",
+          "product-version": "36.31.0",
+          "engine-version": "11.0.1.21",
+          "content-version": "7.99321",
+          "mg-engine-version": "36.30.0.221",
+          "mg-content-version": "45",
+          "whitelist-schema-version": "1.0.0",
+          "whitelist-content-version": "1.71.9"
+        },
+        "os-details": {
+          "$": {
+            "name": "windows",
+            "version": "10.0.17763",
+            "patch": "0",
+            "os-arch": "64-bit",
+            "os-language": "en-US"
+          }
+        },
+        "scan-type": "oas",
+        "scanned-object": {
+          "scanned-object-type": "file-event",
+          "file-event": {
+            "file-path": "C:\\test\\cert_revoked.dll",
+            "actor-process": {
+              "pid": "6160",
+              "path": "C:\\test\\ParentProcess.exe",
+              "user": {
+                "username": "Administrator",
+                "domain": "WIN-I9G538UP8PE"
+              }
+            },
+            "sub-type": "FILE_OPERATION_EXECUTE"
+          }
+        },
+        "detections": {
+          "detection": [
+            {
+              "engine": {
+                "engine-type": "av",
+                "engine-version": "11.0.1.21",
+                "content-version": "7.99321"
+              },
+              "infected-object": {
+                "object-type": "file",
+                "file-object": {
+                  "file-path": "C:\\test\\cert_revoked.dll",
+                  "inner-file-path": "",
+                  "original-file-name": "",
+                  "container": "false",
+                  "packed": "false",
+                  "hidden": "false",
+                  "system-file": "false",
+                  "read-only": "false",
+                  "temporary": "false",
+                  "md5sum": "c2c9c746a7e6c054a256f512f2f5ba07",
+                  "sha1sum": "02563e930455e61c7a790c1bb307cd5ccace2811",
+                  "sha256sum": "c7c51d96792757b23222068ee22d0704c2e6f051ebcdaabc852822d5698456be",
+                  "size-in-bytes": "7144",
+                  "creation-time": "2025-08-12T12:57:08.809Z",
+                  "modification-time": "2017-03-07T18:47:44.000Z",
+                  "access-time": "2025-08-12T12:57:12.814Z",
+                  "signature-info": {
+                    "issuer": "av-AVDCB-CA",
+                    "subject": "kumaran",
+                    "verification-result": "SIG_VERIFY_RESULT_ROOT_CHECK_FAILED",
+                    "signature-type": "embedded"
+                  }
+                }
+              },
+              "infection": {
+                "confidence-level": "high",
+                "infection-type": "malware",
+                "infection-name": "Generic.ShellCode.Marte.H.7F4B7BF1"
+              },
+              "action": {
+                "actioned-object": {
+                  "object-type": "file",
+                  "file-object": {
+                    "file-path": "C:\\test\\cert_revoked.dll",
+                    "inner-file-path": "",
+                    "original-file-name": "",
+                    "container": "false",
+                    "packed": "false",
+                    "hidden": "false",
+                    "system-file": "false",
+                    "read-only": "false",
+                    "temporary": "false",
+                    "md5sum": "c2c9c746a7e6c054a256f512f2f5ba07",
+                    "sha1sum": "02563e930455e61c7a790c1bb307cd5ccace2811",
+                    "sha256sum": "c7c51d96792757b23222068ee22d0704c2e6f051ebcdaabc852822d5698456be",
+                    "size-in-bytes": "7144",
+                    "creation-time": "2025-08-12T12:57:08.809Z",
+                    "modification-time": "2017-03-07T18:47:44.000Z",
+                    "access-time": "2025-08-12T12:57:12.814Z",
+                    "signature-info": {
+                      "issuer": "av-AVDCB-CA",
+                      "subject": "kumaran",
+                      "verification-result": "SIG_VERIFY_RESULT_ROOT_CHECK_FAILED",
+                      "signature-type": "embedded"
+                    }
+                  }
+                },
+                "requested-action": "clean",
+                "applied-action": "quarantine",
+                "result": "success",
+                "error": "0",
+                "reboot-required": "false"
+              }
+            }
+          ]
+        },
+        "scan-statistics": {
+          "total-scan-time-in-ms": "27670"
+        }
+      }
+    },
+    "message": "OK"
+  }
+}
